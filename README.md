@@ -22,7 +22,7 @@ D&D_5e_API/
 │   └── style.css         ← Estilos globales
 ├── js/
 │   └── main.js           ← Lógica y llamadas a la API
-└── imagenes/             ← Recursos gráficos
+└── recursos/             ← Recursos gráficos
 ```
 
 ##  API utilizada
