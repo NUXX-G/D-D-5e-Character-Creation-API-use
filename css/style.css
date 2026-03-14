@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #111;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: black;
+    border-bottom: 2px solid darkred;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-logo img {
+    height: 50px;
+}
+
+.header-logo p {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    color: goldenrod;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: darkred;
+    border-bottom: 2px solid darkred;
+}
+
+.nav-link.activo {
+    color: darkred;
+    border-bottom: 2px solid darkred;
+}
+
+.main {
+    flex: 1;
+}
+
+.heroe {
+    text-align: center;
+    padding: 5rem 2rem;
+}
+
+.heroe h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    color: goldenrod;
+    margin-bottom: 1.5rem;
+}
+
+.heroe p {
+    color: lightgray;
+    max-width: 650px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+}
+
+.boton-principal {
+    display: inline-block;
+    background-color: darkred;
+    color: white;
+    font-family: 'Cinzel', serif;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.boton-principal:hover {
+    background-color: red;
+}
+
+.recursos {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.recursos h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.recursos p {
+    color: lightgray;
+    margin-bottom: 1.5rem;
+}
+
+.recursos-botones {
+    margin-bottom: 2rem;
+}
+
+.video {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 6px;
+}
+
+.seccion-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 3rem;
+    justify-content: center;
+}
+
+.tarjeta {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    padding: 1.5rem;
+    width: 300px;
+    transition: transform 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta h3 {
+    font-family: 'Cinzel', serif;
+    color: white;
+    margin-bottom: 0.8rem;
+}
+
+.tarjeta p {
+    color: lightgray;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.lista-tarjeta {
+    list-style: none;
+}
+
+.lista-tarjeta li {
+    font-size: 0.88rem;
+    color: lightgray;
+    padding-left: 0.5rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+}
+
+.lista-tarjeta li strong {
+    color: white;
+}
+
+.imagen-tarjeta {
+    display: block;
+    margin: 2rem auto 0;
+    width: 200px;
+}
+
+.footer {
+    background-color: black;
+    border-top: 2px solid darkred;
+    text-align: center;
+    padding: 1.5rem;
+    color: lightgray;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: red;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
