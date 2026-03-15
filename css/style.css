@@ -204,3 +204,14 @@ body {
 .footer a:hover {
     text-decoration: underline;
 }
+
+.recursos p {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imagen-meme {
+    width: 250px;
+    margin-top: 1rem;
+}
