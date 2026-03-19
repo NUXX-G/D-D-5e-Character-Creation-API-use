@@ -13,36 +13,57 @@
 
 <body>
 
-    <header class="header">
-        <div class="header-logo">
-            <img src="../imagenes/Dungeons-And-Dragons-Logo-PNG-Pic.webp" alt="Logo Dungeons and Dragons">
+    <header>
+        <div>
+            <img src="../imagenes/Dungeons-And-Dragons-Logo-PNG-Pic.webp" alt="Logo D&D">
             <p>D&D 5e Character Creator</p>
         </div>
-        <nav class="nav">
+        <nav>
             <ul>
-                <li><a href="../index.html" class="nav-link">Inicio</a></li>
-                <li><a href="creador.html" class="nav-link activo">Creador de Personaje</a></li>
-                <li><a href="sobreMi.html" class="nav-link">Sobre Mi</a></li>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="creador.html" class="activo">Creador de Personaje</a></li>
+                <li><a href="sobreMi.html">Sobre Mi</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="main">
+    <main>
 
-        <select id="select-raza">
-            <option value="">Elige una raza</option>
-        </select>
+        <div>
+            <h1>Crea tu Personaje</h1>
+            <p>Elige raza y clase para ver tu ficha.</p>
+        </div>
+
+        <div class="creador">
+
+            <div class="formulario">
+                <label for="input-nombre">Nombre</label>
+                <input type="text" id="input-nombre" placeholder="Nombre del personaje">
+                <label for="select-raza">Raza</label>
+                <select id="select-raza">
+                    <option value="">Cargando...</option>
+                </select>
+                <label for="select-clase">Clase</label>
+                <select id="select-clase">
+                    <option value="">Cargando...</option>
+                </select>
+                <button id="btn-generar">Generar Personaje</button>
+                <button id="btn-aleatorio">Aleatorio</button>
+                <button id="btn-manual">Descargar Manual</button>
+            </div>
+
+            <div id="ficha-personaje" class="oculto"></div>
+
+        </div>
 
     </main>
 
-    <footer class="footer">
+    <footer>
         <p>Desarrollado por <strong>Nelson Filipe Fardilha Karlsson</strong> — C.F.G.S. Desarrollo de Aplicaciones Multiplataforma</p>
-        <br>
         <p>Datos obtenidos de <a href="https://www.dnd5eapi.co/" target="_blank">D&D 5e API</a></p>
     </footer>
 
     <script src="../js/main.js"></script>
 
 </body>
-
 </html>
