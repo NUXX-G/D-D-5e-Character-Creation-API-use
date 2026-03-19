@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creador de Personaje | D&D 5e Character Creator</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
+    <meta name="author" content="Nelson Filipe Fardilha Karlsson">
+    <title>Creador de Personaje | D&D 5e</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../imagenes/Dungeons-And-Dragons-Logo-PNG-Pic.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <header class="header">
         <div class="header-logo">
-            <p>D&D 5e Creator</p>
+            <img src="../imagenes/Dungeons-And-Dragons-Logo-PNG-Pic.webp" alt="Logo Dungeons and Dragons">
+            <p>D&D 5e Character Creator</p>
         </div>
         <nav class="nav">
             <ul>
-                <li><a href="index.html" class="nav-link">Inicio</a></li>
-                <li><a href="creador.html" class="nav-link activo">Creador</a></li>
+                <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                <li><a href="creador.html" class="nav-link activo">Creador de Personaje</a></li>
                 <li><a href="sobreMi.html" class="nav-link">Sobre Mi</a></li>
             </ul>
         </nav>
@@ -27,17 +30,19 @@
     <main class="main">
 
         <select id="select-raza">
-            <option>Elige una raza</option>
+            <option value="">Elige una raza</option>
         </select>
 
     </main>
 
     <footer class="footer">
-        <p>D&D 5e Character Creator — Proyecto LMSGI — DAM</p>
-        <p>Dungeons &amp; Dragons es marca registrada de Wizards of the Coast. Este proyecto no tiene fines comerciales.</p>
+        <p>Desarrollado por <strong>Nelson Filipe Fardilha Karlsson</strong> — C.F.G.S. Desarrollo de Aplicaciones Multiplataforma</p>
+        <br>
+        <p>Datos obtenidos de <a href="https://www.dnd5eapi.co/" target="_blank">D&D 5e API</a></p>
     </footer>
 
     <script src="../js/main.js"></script>
 
 </body>
+
 </html>
