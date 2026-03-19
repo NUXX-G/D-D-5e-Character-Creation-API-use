@@ -138,6 +138,7 @@ a.boton {
     width: auto;
     margin-top: 0.5rem;
     transition: background-color 0.2s;
+    text-align: center;
 }
 
 button:hover,
