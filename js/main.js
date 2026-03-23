@@ -5,6 +5,8 @@ const url = "https://www.dnd5eapi.co/api";
 let razaGuardada = null;
 let claseGuardada = null;
 
+let contador = 0;
+
 /**
  * @description Esperamos a que todo este cargado completamente para llamar a las funciones
  * y asi no tener ningun error inesperado ;).
@@ -24,6 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("btn-plantilla").addEventListener("click", () => {
         descargarPlantilla();
+    });
+
+    document.getElementById("btn-limpiar").addEventListener("click", () => {
+        limpiarPlantilla();
     });
 });
 
@@ -136,16 +142,28 @@ function mostrarFicha(nombre, raza, clase, alineamiento)
         if (bono.ability_score.name === "CHA") { CHA += bono.bonus; }
     });
 
-    ficha.innerHTML = "<h2>" + nombre + "</h2>" 
+    fetch(url + "/classes/" + clase.index + "/spells")
+        .then(respuesta => respuesta.json())
+        .then(datosSpells => {
+            let conjuro = "Esta clase no tiene conjuros";
+        if (datosSpells.results.length > 0) 
+        {
+            conjuro = datosSpells.results[Math.floor(Math.random() * datosSpells.results.length)].name;
+        }                
+            ficha.innerHTML = "<h2>" + nombre + "</h2>" 
                     + "<p><strong>Raza: </strong>" + raza.name + "</p>" 
                     + "<p><strong>Tamaño: </strong>" + raza.size + "</p>" 
                     + "<p><strong>Clase: </strong>" + clase.name + "</p>" 
+                    + "<p><strong>Hechizo: </strong>" + conjuro +"</p>"
                     + "<p><strong>Vida: </strong>" + "d"+clase.hit_die + "</p>" 
                     + "<p><strong>Alineamiento: </strong>" + alineamiento + "</p>"
                     + "<p><strong>Bonificadores: </strong>" + bonos + "</p>"
                     + "<p><strong>STR: </strong>" + STR + " | <strong>DEX: </strong>" + DEX + " | <strong>CON: </strong>" + CON + "</p>"
                     + "<p><strong>INT: </strong>" + INT + " | <strong>WIS: </strong>" + WIS + " | <strong>CHA: </strong>" + CHA + "</p>";
-    ficha.classList.remove("oculto");
+            contador++;
+            document.getElementById("contador-personajes").textContent = "Personajes generados: " + contador;
+            ficha.classList.remove("oculto");
+        });
 }
 
 /**
@@ -288,4 +306,22 @@ function descargarPlantilla()
         .catch(error => {
             alert("Error al cargar la plantilla: " + error.message);
         });
+}
+
+
+function limpiarPlantilla()
+{
+    const ficha = document.getElementById("ficha-personaje");
+    ficha.classList.add("oculto");
+    ficha.innerHTML = "";
+    document.getElementById("input-nombre").value = "";
+    document.getElementById("select-raza").value = "";
+    document.getElementById("select-clase").value = "";
+    document.getElementById("select-alineamiento").value = "";
+
+    contador = 0;
+    razaGuardada = null;
+    claseGuardada = null;
+
+    document.getElementById("contador-personajes").textContent = "Personajes generados: " + contador;
 }
